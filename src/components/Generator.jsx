@@ -51,8 +51,12 @@ const Generator = () => {
   };
   const downloadImage = async () => {
     try {
+      socialTemplate.current.style.width = "609px";
+      socialTemplate.current.style.height = "455px";
       const dataUrl = await htmlToImage.toPng(socialTemplate.current, { quality: 1.9 });
 
+      socialTemplate.current.style.width = "";
+      socialTemplate.current.style.height = "";
       const link = document.createElement("a");
       link.download = `${jName}.png`;
       link.href = dataUrl;
