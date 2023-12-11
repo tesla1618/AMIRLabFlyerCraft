@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "https://rajieb.tech/AMIRLabFlyerCraft",
+  "homepage": "http://rajieb.tech/AMIRLabFlyerCraft",
   "private": false,
   "dependencies": {
     "@headlessui/react": "^1.7.17",
