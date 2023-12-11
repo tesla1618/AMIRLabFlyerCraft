@@ -75,7 +75,7 @@ const Generator = () => {
   return (
     <Layout>
       <div className="container mx-auto mt-10 mb-5 px-4">
-        <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-x-3 sm:grid-cols-1">
+        <div className="grid lg:grid-cols-2 md:grid-cols-2 gap-x-3 sm:grid-cols-1 gap-y-3">
           <div className="bg-base-100 shadow-md rounded-md p-10">
             <h3 className="text-xl border-b pb-4 border-primary">Information</h3>
             <div className="py-5 flex flex-col gap-y-2">
