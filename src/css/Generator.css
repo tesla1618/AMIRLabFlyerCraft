@@ -1,0 +1,93 @@
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid #ccc;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus,
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
+  outline: none !important;
+  transform: translate(0, 0) scale(1.03);
+}
+
+.generated-image-wrap {
+  background: hsla(211, 100%, 43%, 1);
+  background: linear-gradient(180deg, hsla(211, 100%, 43%, 1) 0%, hsla(216, 100%, 22%, 1) 100%);
+  background: -moz-linear-gradient(180deg, hsla(211, 100%, 43%, 1) 0%, hsla(216, 100%, 22%, 1) 100%);
+  background: -webkit-linear-gradient(180deg, hsla(211, 100%, 43%, 1) 0%, hsla(216, 100%, 22%, 1) 100%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#006BDB", endColorstr="#002D6F", GradientType=1 );
+  max-width: 100%;
+  word-wrap: break-word;
+}
+
+.amirlab-title {
+  display: flex;
+  /* max-width: 80%; */
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  flex-wrap: nowrap;
+}
+
+.success-in {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.success-text {
+  color: #faff00 !important;
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: 3px;
+  word-spacing: 4px;
+}
+
+.journal-name {
+  color: #fff;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 150%;
+  text-transform: uppercase;
+}
+
+.journal-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 100%;
+}
+
+.paper-title {
+  overflow: hidden;
+}
+.paper-title .icon {
+  float: left;
+  margin-right: 10px;
+}
+
+.paper-title p {
+  text-align: justify;
+  font-family: "Carrois Gothic SC", sans-serif;
+}
+
+.paper-authors {
+  overflow: hidden;
+}
+
+.paper-authors .icon {
+  float: left;
+  margin-right: 10px;
+}
+
+.paper-authors p {
+  text-align: justify;
+  font-family: "Carrois Gothic SC", sans-serif;
+}
