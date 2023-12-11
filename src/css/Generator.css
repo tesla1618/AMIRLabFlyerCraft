@@ -19,8 +19,11 @@ input[type="radio"]:focus {
   background: -moz-linear-gradient(180deg, hsla(211, 100%, 43%, 1) 0%, hsla(216, 100%, 22%, 1) 100%);
   background: -webkit-linear-gradient(180deg, hsla(211, 100%, 43%, 1) 0%, hsla(216, 100%, 22%, 1) 100%);
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#006BDB", endColorstr="#002D6F", GradientType=1 );
-  max-width: 100%;
-  word-wrap: break-word;
+  max-width: fit-content;
+  max-height: fit-content;
+  /* word-wrap: break-word; */
+  /* min-width: 1920px;
+  min-height: 1080px; */
 }
 
 .amirlab-title {

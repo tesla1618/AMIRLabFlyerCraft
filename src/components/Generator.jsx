@@ -51,10 +51,10 @@ const Generator = () => {
   };
   const downloadImage = async () => {
     try {
-      const dataUrl = await htmlToImage.toJpeg(socialTemplate.current);
+      const dataUrl = await htmlToImage.toPng(socialTemplate.current, { quality: 1.9 });
 
       const link = document.createElement("a");
-      link.download = "html-to-img.png";
+      link.download = `${jName}.png`;
       link.href = dataUrl;
       link.click();
     } catch (error) {
@@ -104,15 +104,15 @@ const Generator = () => {
             </div>
             {/* <div className="col-md-6 col-12 text-center">{authorDp && <img id="image-preview" alt="Preview" className="object-fit-cover rounded-circle" style={{ width: "200px", height: "200px", marginTop: "10px" }} />}</div> */}
           </div>
-          <div ref={socialTemplate}>
-            <div className="shadow-md rounded-md p-10 generated-image-wrap">
+          <div height={455} width={609}>
+            <div ref={socialTemplate} className="shadow-md rounded-md p-10 generated-image-wrap">
               <div className="amirlab-title">
                 <img src={logoCircle} width={80} alt="" />
                 <p className="text-white font-bold text-2xl ml-3">Advanced Machine Intelligence Research Lab</p>
               </div>
               <div className="success-in mt-3">
-                <div className="success-text">Success In</div>
-                <div className="journal-name mt-1">{jName ? jName : "Journal Name"}</div>
+                <div className="success-text border-b pb-2">Success In</div>
+                <div className="journal-name mt-2">{jName ? jName : "Journal Name"}</div>
               </div>
               <div className="flex flex-row items-center justify-center content-center gap-x-5 mt-6">
                 <div className="flex-1 author-dp w-2/5">
