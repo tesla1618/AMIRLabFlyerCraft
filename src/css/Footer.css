@@ -63,19 +63,17 @@
   max-width: 5rem;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis; /* Display ellipsis (...) when text overflows */
+  text-overflow: ellipsis;
 }
 
 .line-2 {
-  /* max-width: 5rem; */
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2 !important; /* Number of lines to show */
+  -webkit-line-clamp: 2 !important;
   -webkit-box-orient: vertical;
 }
 
-/* Animation */
 .anim-typewriter {
   animation: typewriter 1s steps(30) 1s 1 normal both, blinkTextCursor 500ms steps(30) infinite normal;
 }
