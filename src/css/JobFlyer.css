@@ -16,21 +16,13 @@ input[type="radio"]:focus {
 }
 
 .generated-image-wrap {
-  background: hsla(211, 100%, 43%, 1);
-  background: linear-gradient(180deg, hsla(211, 100%, 43%, 1) 0%, hsla(216, 100%, 22%, 1) 100%);
-  background: -moz-linear-gradient(180deg, hsla(211, 100%, 43%, 1) 0%, hsla(216, 100%, 22%, 1) 100%);
-  background: -webkit-linear-gradient(180deg, hsla(211, 100%, 43%, 1) 0%, hsla(216, 100%, 22%, 1) 100%);
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#006BDB", endColorstr="#002D6F", GradientType=1 );
+  background-color: #000;
   /* max-width: fit-content;
   max-height: fit-content; */
   position: relative;
-  z-index: -9999;
-}
-
-.generated-image-wrap.job {
-  /* max-width: fit-content;
-  max-height: fit-content; */
-  position: relative;
+  height: 650px;
+  width: 550px;
+  /* width: 600px; */
   z-index: -9999;
 }
 
@@ -53,14 +45,25 @@ input[type="radio"]:focus {
 
 .amirlab-title.job {
   font-family: "Lovelo", sans-serif;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+}
+.dbtn {
+  max-width: 100%;
+  word-wrap: break-word;
+  text-align: left;
+  padding: 12px;
+  height: fit-content;
 }
 
 .success-in {
   display: flex;
+  /* margin-top: 10px; */
+  /* flex-grow: 10; */
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  /* width: 100px; */
 }
 
 .success-text {
@@ -74,7 +77,7 @@ input[type="radio"]:focus {
 
 .journal-name {
   color: #fff;
-  font-family: "Josefin Sans", sans-serif;
+  font-family: "Jost", sans-serif;
   font-size: 150%;
   text-transform: uppercase;
 }
@@ -95,8 +98,16 @@ input[type="radio"]:focus {
   margin-right: 10px;
 }
 
-.paper-title p {
+.designation {
   text-align: justify;
+  font-family: "Carrois Gothic SC", sans-serif;
+  text-align: center;
+}
+.department {
+  text-align: justify;
+  width: 300px;
+  text-align: center;
+  word-wrap: break-word;
   font-family: "Carrois Gothic SC", sans-serif;
 }
 
