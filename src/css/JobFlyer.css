@@ -20,8 +20,8 @@ input[type="radio"]:focus {
   /* max-width: fit-content;
   max-height: fit-content; */
   position: relative;
-  height: 650px;
-  width: 550px;
+  /* height: 650px;
+  width: 550px; */
   /* width: 600px; */
   z-index: -9999;
 }
