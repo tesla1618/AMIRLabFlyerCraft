@@ -16,7 +16,7 @@ const Footer = () => {
               Advanced Machine Intelligence Research Lab
             </span>
           </p>
-          <p className="amir-description text-justify">Established in 2020, the Advanced Machine Intelligence Research Lab (AMIRL) is a global non-profit academic consortium committed to promoting innovation and attaining research excellence. The AMIRL network comprises distinguished academics and scientists with affiliations to universities and industries spanning multiple continents.</p>
+          <p className="amir-description text-justify">Established in 2020, the Advanced Machine Intelligence Research Lab (AMIR Lab) is a global non-profit academic consortium committed to promoting innovation and attaining research excellence. The AMIR Lab network comprises distinguished academics and scientists with affiliations to universities and industries spanning multiple continents.</p>
         </aside>
         <nav>
           <header className="footer-title">Get Social</header>

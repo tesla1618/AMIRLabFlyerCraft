@@ -15,14 +15,14 @@ input[type="radio"]:focus {
   transform: translate(0, 0) scale(1.03);
 }
 
-.generated-image-wrap {
-  background-color: #000;
+.generated-image-wrap2 {
+  background-color: #222222;
   /* max-width: fit-content;
   max-height: fit-content; */
   position: relative;
-  /* height: 650px;
-  width: 550px; */
-  /* width: 600px; */
+  height: 650px;
+  /* width: 550px; */
+
   z-index: -9999;
 }
 
@@ -32,19 +32,21 @@ input[type="radio"]:focus {
 /* .generated-image-wrap::before {
 } */
 
-.amirlab-title {
+.amirlab-title2 {
   display: flex;
   /* max-width: 80%; */
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-family: "Quicksand", sans-serif;
+  /* font-family: "Quicksand", sans-serif; */
   font-size: 20px;
   flex-wrap: nowrap;
 }
 
+.font-jost {
+  font-family: "Jost", sans-serif;
+}
 .amirlab-title.job {
-  font-family: "Lovelo", sans-serif;
   /* text-transform: uppercase; */
 }
 .dbtn {
@@ -55,6 +57,9 @@ input[type="radio"]:focus {
   height: fit-content;
 }
 
+.font-lovelo {
+  font-family: "Lovelo", sans-serif;
+}
 .success-in {
   display: flex;
   /* margin-top: 10px; */
@@ -105,7 +110,7 @@ input[type="radio"]:focus {
 }
 .department {
   text-align: justify;
-  width: 300px;
+  max-width: 100%;
   text-align: center;
   word-wrap: break-word;
   font-family: "Carrois Gothic SC", sans-serif;
