@@ -4,7 +4,7 @@ input[type="text"],
 input[type="file"] {
   width: 100%;
   transition: all 0.2s ease-in-out;
-  border: 1px solid #ccc;
+  /* border: 1px solid #ccc; */
 }
 
 input[type="text"]:focus,
