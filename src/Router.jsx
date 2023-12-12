@@ -1,12 +1,14 @@
 import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
+import JobFlyer from "./components/JobFlyer";
 
 const Router = () => {
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename="/AMIRLabFlyerCraft">
       <Routes>
-        <Route path="/" element={<App />} />
+        <Route exact path="/" element={<App />} />
+        <Route path="/job" element={<JobFlyer />} />
       </Routes>
     </BrowserRouter>
   );
