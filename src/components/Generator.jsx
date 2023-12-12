@@ -16,6 +16,7 @@ const Generator = () => {
   const [title, setTitle] = useState("");
   const [jName, setjName] = useState("");
   const [authorNames, setauthorNames] = useState([]);
+  const dummyauthorNames = ["Albert Einstein", "Marie Curie", "Isaac Newton", "Richard Feynman", "Stephen Hawking"];
   const [currentAuthorName, setcurrentAuthorName] = useState("");
 
   function addAuthor() {
@@ -113,7 +114,7 @@ const Generator = () => {
               <div className="generated-content">
                 <div className="amirlab-title">
                   <img src={logoCircle} width={80} alt="" />
-                  <p className="text-white font-bold text-2xl ml-3">Advanced Machine Intelligence Research Lab</p>
+                  <p className="text-white font-bold text-2xl ml-3">Advanced Machine Intelligence Research Lab - AMIR Lab</p>
                 </div>
                 <div className="success-in mt-3">
                   <div className="success-text border-b pb-2">Success In</div>
@@ -130,23 +131,26 @@ const Generator = () => {
                       <div className="icon">
                         <FeatherIcon icon="file-text" className="text-white" />
                       </div>
-                      <p className="text-white">{title ? title : "The title to the paper"}</p>
+                      <p className="text-white">{title ? title : "The title of the paper is prominently featured in this designated section for easy identification and reference"}</p>
                     </div>
                     <div className="paper-authors mt-4">
                       <div className="icon">
                         <FeatherIcon className="text-white" icon="users" />
                       </div>
                       <p className="gap">
-                        {authorNames ? (
-                          authorNames.map((author, index) => (
-                            <div className="badge badge-ghost mr-1">
-                              {author}
-                              {authorIndex && <sup className="ml-1">{index + 1}</sup>}
-                            </div>
-                          ))
-                        ) : (
-                          <div className="badge badge-ghost mr-1">None</div>
-                        )}
+                        {authorNames && authorNames.length > 0
+                          ? authorNames.map((author, index) => (
+                              <div className="badge badge-ghost mr-1" key={index}>
+                                {author}
+                                {authorIndex && <sup className="ml-1">{index + 1}</sup>}
+                              </div>
+                            ))
+                          : dummyauthorNames.map((dauthor, index) => (
+                              <div className="badge badge-ghost mr-1" key={index}>
+                                {dauthor}
+                                {authorIndex && <sup className="ml-1">{index + 1}</sup>}
+                              </div>
+                            ))}
                       </p>
                     </div>
                   </div>
