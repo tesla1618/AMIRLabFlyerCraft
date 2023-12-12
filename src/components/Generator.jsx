@@ -108,55 +108,57 @@ const Generator = () => {
             </div>
             {/* <div className="col-md-6 col-12 text-center">{authorDp && <img id="image-preview" alt="Preview" className="object-fit-cover rounded-circle" style={{ width: "200px", height: "200px", marginTop: "10px" }} />}</div> */}
           </div>
-          <div height={455} width={609}>
+          <div>
             <div ref={socialTemplate} className="shadow-md rounded-md p-10 generated-image-wrap">
-              <div className="amirlab-title">
-                <img src={logoCircle} width={80} alt="" />
-                <p className="text-white font-bold text-2xl ml-3">Advanced Machine Intelligence Research Lab</p>
-              </div>
-              <div className="success-in mt-3">
-                <div className="success-text border-b pb-2">Success In</div>
-                <div className="journal-name mt-2">{jName ? jName : "Journal Name"}</div>
-              </div>
-              <div className="flex flex-row items-center justify-center content-center gap-x-5 mt-6">
-                <div className="flex-1 author-dp w-2/5">
-                  <div className="avatar">
-                    <div className="rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">{authorDp ? <img width={120} id="image-preview" /> : <img width={120} src={defaultAvatar} />}</div>
-                  </div>
+              <div className="generated-content">
+                <div className="amirlab-title">
+                  <img src={logoCircle} width={80} alt="" />
+                  <p className="text-white font-bold text-2xl ml-3">Advanced Machine Intelligence Research Lab</p>
                 </div>
-                <div className="flex-2 w-3/5">
-                  <div className="paper-title">
-                    <div className="icon">
-                      <FeatherIcon icon="file-text" className="text-white" />
+                <div className="success-in mt-3">
+                  <div className="success-text border-b pb-2">Success In</div>
+                  <div className="journal-name mt-2">{jName ? jName : "Journal Name"}</div>
+                </div>
+                <div className="flex flex-row items-center justify-center content-center gap-x-5 mt-6">
+                  <div className="flex-1 author-dp w-2/5">
+                    <div className="avatar">
+                      <div className="rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">{authorDp ? <img width={120} id="image-preview" /> : <img width={120} src={defaultAvatar} />}</div>
                     </div>
-                    <p className="text-white">{title ? title : "The title to the paper"}</p>
                   </div>
-                  <div className="paper-authors mt-4">
-                    <div className="icon">
-                      <FeatherIcon className="text-white" icon="users" />
+                  <div className="flex-2 w-3/5">
+                    <div className="paper-title">
+                      <div className="icon">
+                        <FeatherIcon icon="file-text" className="text-white" />
+                      </div>
+                      <p className="text-white">{title ? title : "The title to the paper"}</p>
                     </div>
-                    <p className="gap">
-                      {authorNames ? (
-                        authorNames.map((author, index) => (
-                          <div className="badge badge-ghost mr-1">
-                            {author}
-                            {authorIndex && <sup className="ml-1">{index + 1}</sup>}
-                          </div>
-                        ))
-                      ) : (
-                        <div className="badge badge-ghost mr-1">None</div>
-                      )}
-                    </p>
+                    <div className="paper-authors mt-4">
+                      <div className="icon">
+                        <FeatherIcon className="text-white" icon="users" />
+                      </div>
+                      <p className="gap">
+                        {authorNames ? (
+                          authorNames.map((author, index) => (
+                            <div className="badge badge-ghost mr-1">
+                              {author}
+                              {authorIndex && <sup className="ml-1">{index + 1}</sup>}
+                            </div>
+                          ))
+                        ) : (
+                          <div className="badge badge-ghost mr-1">None</div>
+                        )}
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+            <div className="p-5 text-end">
+              <button onClick={downloadImage} className="btn btn-primary">
+                Download as PNG
+              </button>
+            </div>
           </div>
-        </div>
-        <div className="p-5 text-center">
-          <button onClick={downloadImage} className="btn btn-primary">
-            Download as PNG
-          </button>
         </div>
       </div>
     </Layout>

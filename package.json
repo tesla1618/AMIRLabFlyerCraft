@@ -1,7 +1,7 @@
 {
   "name": "client",
   "version": "0.1.0",
-  "homepage": "http://rajieb.tech/AMIRLabFlyerCraft",
+  "homepage": "https://tesla1618.github.io/AMIRLabFlyerCraft",
   "private": false,
   "dependencies": {
     "@headlessui/react": "^1.7.17",
