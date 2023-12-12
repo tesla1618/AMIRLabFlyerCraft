@@ -8,7 +8,7 @@ const Router = () => {
     <BrowserRouter basename="/AMIRLabFlyerCraft">
       <Routes>
         <Route exact path="/" element={<App />} />
-        <Route path="/job" element={<JobFlyer />} />
+        <Route exact path="/job" element={<JobFlyer />} />
       </Routes>
     </BrowserRouter>
   );
