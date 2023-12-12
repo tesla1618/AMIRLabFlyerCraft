@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/AMIRLabFlyerCraft/static/css/main.1aa6ecbf.css",
+    "main.css": "/AMIRLabFlyerCraft/static/css/main.3043c230.css",
     "main.js": "/AMIRLabFlyerCraft/static/js/main.f2a09976.js",
     "static/media/logo-circle.png": "/AMIRLabFlyerCraft/static/media/logo-circle.b7f74857edda2953895f.png",
     "static/media/logo_white.png": "/AMIRLabFlyerCraft/static/media/logo_white.59baf7520da2b8ca9650.png",
     "static/media/logo2.png": "/AMIRLabFlyerCraft/static/media/logo2.2693a98d975ba4097ce3.png",
     "index.html": "/AMIRLabFlyerCraft/index.html",
-    "main.1aa6ecbf.css.map": "/AMIRLabFlyerCraft/static/css/main.1aa6ecbf.css.map",
+    "main.3043c230.css.map": "/AMIRLabFlyerCraft/static/css/main.3043c230.css.map",
     "main.f2a09976.js.map": "/AMIRLabFlyerCraft/static/js/main.f2a09976.js.map"
   },
   "entrypoints": [
-    "static/css/main.1aa6ecbf.css",
+    "static/css/main.3043c230.css",
     "static/js/main.f2a09976.js"
   ]
 }
