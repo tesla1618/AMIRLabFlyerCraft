@@ -124,6 +124,7 @@ const Generator = () => {
           </div>
           <div>
             <div ref={socialTemplate} className="shadow-md p-10 generated-image-wrap">
+              <div className="wave"></div>
               <div className="generated-content">
                 <div className="amirlab-title">
                   <img src={logoCircle} width={80} alt="" />
