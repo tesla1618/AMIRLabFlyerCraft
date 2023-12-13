@@ -284,9 +284,9 @@ const JobFlyer = () => {
               {designation === "Advisor" ? <div className="advisorel" style={{ backgroundImage: `url(${advisorBG})` }}></div> : null}
               {designation === "Head of the Department" ? (
                 <>
-                  <div className="flare" style={{ backgroundImage: `url(${flare})` }}></div>
+                  {/* <div className="flare" style={{ backgroundImage: `url(${flare})` }}></div> */}
                   <div className="headel" style={{ backgroundImage: `url(${headBG})` }}></div>
-                  <div className="headdp" style={{ backgroundImage: `url(${dpring})` }}></div>
+                  {/* <div className="headdp" style={{ backgroundImage: `url(${dpring})` }}></div> */}
                 </>
               ) : null}
               <div className="arrows" style={{ backgroundImage: `url(${arrows})` }}></div>
@@ -372,7 +372,7 @@ const JobFlyer = () => {
               </div>
             </div>
             <div className="p-5 text-end">
-              <button onClick={downloadImage} disabled={!(department && Name && designation && authorDp)} className="btn btn-primary">
+              <button onClick={downloadImage} disabled={designation == "Volunteer" ? !(Name && designation && authorDp) : !(Name && department && designation && authorDp)} className="btn btn-primary">
                 Download as PNG
               </button>
             </div>
