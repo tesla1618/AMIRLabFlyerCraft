@@ -1,20 +1,28 @@
 {
   "files": {
-    "main.css": "/AMIRLabFlyerCraft/static/css/main.39067ba6.css",
-    "main.js": "/AMIRLabFlyerCraft/static/js/main.c1d41310.js",
+    "main.css": "/AMIRLabFlyerCraft/static/css/main.d84856f7.css",
+    "main.js": "/AMIRLabFlyerCraft/static/js/main.0a5d2cdf.js",
     "static/media/logo-circle.png": "/AMIRLabFlyerCraft/static/media/logo-circle.b7f74857edda2953895f.png",
-    "static/media/intern.png": "/AMIRLabFlyerCraft/static/media/intern.886a23b6fa70e3f5ae54.png",
+    "static/media/dpring.png": "/AMIRLabFlyerCraft/static/media/dpring.8b7387b8f1eb36726b3d.png",
+    "static/media/lead.png": "/AMIRLabFlyerCraft/static/media/lead.6ab66b78fa33a19a7112.png",
+    "static/media/researcher.png": "/AMIRLabFlyerCraft/static/media/researcher.9d03b514d269097c0bbb.png",
     "static/media/assistant.png": "/AMIRLabFlyerCraft/static/media/assistant.fcdd42616843d026fbd5.png",
     "static/media/avatar.png": "/AMIRLabFlyerCraft/static/media/avatar.53ced72591149550861f.png",
+    "static/media/flare.png": "/AMIRLabFlyerCraft/static/media/flare.460a03cbeef20534a327.png",
     "static/media/logo_white.png": "/AMIRLabFlyerCraft/static/media/logo_white.59baf7520da2b8ca9650.png",
     "static/media/logo2.png": "/AMIRLabFlyerCraft/static/media/logo2.2693a98d975ba4097ce3.png",
+    "static/media/intern.png": "/AMIRLabFlyerCraft/static/media/intern.a6428c07ef3b27914e5a.png",
+    "static/media/networks.png": "/AMIRLabFlyerCraft/static/media/networks.6ff6ca83a56998d30aa0.png",
+    "static/media/head.png": "/AMIRLabFlyerCraft/static/media/head.8a1d03003aa2578556ac.png",
+    "static/media/advisor.png": "/AMIRLabFlyerCraft/static/media/advisor.87470e5a0834854ab38c.png",
+    "static/media/volunteer.png": "/AMIRLabFlyerCraft/static/media/volunteer.9a81eac542669e8b1808.png",
     "static/media/arrows.png": "/AMIRLabFlyerCraft/static/media/arrows.1373e011e422e38118e6.png",
     "index.html": "/AMIRLabFlyerCraft/index.html",
-    "main.39067ba6.css.map": "/AMIRLabFlyerCraft/static/css/main.39067ba6.css.map",
-    "main.c1d41310.js.map": "/AMIRLabFlyerCraft/static/js/main.c1d41310.js.map"
+    "main.d84856f7.css.map": "/AMIRLabFlyerCraft/static/css/main.d84856f7.css.map",
+    "main.0a5d2cdf.js.map": "/AMIRLabFlyerCraft/static/js/main.0a5d2cdf.js.map"
   },
   "entrypoints": [
-    "static/css/main.39067ba6.css",
-    "static/js/main.c1d41310.js"
+    "static/css/main.d84856f7.css",
+    "static/js/main.0a5d2cdf.js"
   ]
 }
