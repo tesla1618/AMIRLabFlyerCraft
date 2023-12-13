@@ -192,11 +192,22 @@ const JobFlyer = () => {
             <h3 className="text-xl border-b pb-4 ">Information</h3>
             <div className="alert alert-warning text-justify mt-6">
               <div>
+                <p className="mb-2">
+                  <i>&gt;&gt; Hints</i>
+                </p>
                 <p className="mb-3 font-light">
                   If you have assignments in <b>multiple</b> departments, <b>choose</b> the department associated with the <b>highest designation</b>.
                 </p>
                 <p className="font font-light">
                   If the generated image does not look appealing in mobile/web view, don't worry. It will be <b>resized after download</b>.
+                  <ul className="mt-3">
+                    <li>
+                      <b>Recommended Browser:</b> Chrome
+                    </li>
+                    <li>
+                      <b>Recommended Screen:</b> FHD (1080p) and ++
+                    </li>
+                  </ul>
                 </p>
               </div>
             </div>
