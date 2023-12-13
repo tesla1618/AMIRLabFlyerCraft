@@ -4,6 +4,17 @@ import "../css/JobFlyer.css";
 import logoCircle from "../assets/logo-circle.png";
 import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 import * as htmlToImage from "html-to-image";
+import internBG from "../assets/intern.png";
+import arrows from "../assets/arrows.png";
+import assistantBG from "../assets/assistant.png";
+import researcherBG from "../assets/researcher.png";
+import leadBG from "../assets/lead.png";
+import advisorBG from "../assets/advisor.png";
+import headBG from "../assets/head.png";
+import flare from "../assets/flare.png";
+import dpring from "../assets/dpring.png";
+import networks from "../assets/networks.png";
+import volunteerBG from "../assets/volunteer.png";
 
 import defaultAvatar from "../assets/avatar.png";
 
@@ -11,6 +22,22 @@ import { useRef } from "react";
 import { CheckCircle } from "feather-icons-react/build/IconComponents";
 
 const JobFlyer = () => {
+  const [stepCount, setstepCount] = useState(0);
+  const [hasFinishedWriting, setHasFinishedWriting] = useState(false);
+  const [bgColor, setbgColor] = useState("#00000");
+  const [designation, setDesignation] = useState("");
+  const [department, setDepartment] = useState("");
+  const [dbgColor, setdbgColor] = useState("");
+  const socialTemplate = useRef(null);
+  const [authorDp, setDP] = useState(null);
+  const [title, setTitle] = useState("");
+  const [Name, setName] = useState("");
+  const [authorNames, setauthorNames] = useState([]);
+  const dummyauthorNames = ["Albert Einstein", "Marie Curie", "Isaac Newton", "Richard Feynman", "Stephen Hawking"];
+  const [currentAuthorName, setcurrentAuthorName] = useState("");
+  const [noAuthor, setnoAuthor] = useState(false);
+  const [hasClicked, sethasClicked] = useState(true);
+
   const ResearchDepartments = [
     {
       name: "Data Science and Federated Learning",
@@ -48,7 +75,7 @@ const JobFlyer = () => {
     },
     {
       name: "Lead Researcher",
-      color: "#612e35",
+      color: "#430772",
     },
     {
       name: "Researcher",
@@ -60,47 +87,50 @@ const JobFlyer = () => {
     },
     {
       name: "Research Intern",
+      color: "#2b3575",
+    },
+    {
+      name: "Volunteer",
       color: "#1b3059",
     },
   ];
   // Defining Background colors for the template based on Designations
-  const [bgColor, setbgColor] = useState("#00000");
-  const [designation, setDesignation] = useState("");
-  const [department, setDepartment] = useState("");
-  const [dbgColor, setdbgColor] = useState("");
 
   function addDepartment(name, color) {
     setDepartment(name);
     setdbgColor(color);
+    sethasClicked(!hasClicked);
+    if (hasClicked) {
+      setstepCount(stepCount + 1);
+      sethasClicked(!hasClicked);
+    }
   }
 
   function addDesignation(name, color) {
     setDesignation(name);
     console.log(name);
     setbgColor(color);
-    // if (name === "Lead Researcher") {
-    //   setbgColor(color);
-    // } else if (name === "Researcher") {
-    //   setbgColor(color);
-    // } else if (name === "Research Assistant") {
-    //   setbgColor(color);
-    // } else if (name === "Research Intern") {
-    //   setbgColor(color);
-    // }
-    console.log(bgColor);
+    sethasClicked(!hasClicked);
+    if (hasClicked) {
+      setstepCount(stepCount + 1);
+      sethasClicked(!hasClicked);
+    }
   }
 
-  const socialTemplate = useRef(null);
-  const [authorDp, setDP] = useState(null);
-  const [title, setTitle] = useState("");
-  const [Name, setName] = useState("");
-  const [authorNames, setauthorNames] = useState([]);
-  const dummyauthorNames = ["Albert Einstein", "Marie Curie", "Isaac Newton", "Richard Feynman", "Stephen Hawking"];
-  const [currentAuthorName, setcurrentAuthorName] = useState("");
-  const [noAuthor, setnoAuthor] = useState(false);
+  function addCount() {
+    if (Name.trim() !== "" && hasFinishedWriting) {
+      setHasFinishedWriting(true);
+      sethasClicked(!hasClicked);
+      if (hasClicked) {
+        setstepCount(stepCount + 1);
+        sethasClicked(!hasClicked);
+      }
+    }
+  }
 
   function ChangeName(e) {
     setName(e.target.value);
+    setHasFinishedWriting(false);
   }
   function ChangeTitle(e) {
     setTitle(e.target.value);
@@ -114,6 +144,7 @@ const JobFlyer = () => {
       reader.readAsDataURL(e.target.files[0]);
 
       setDP(e.target.files[0]);
+      setstepCount(stepCount + 1);
     } catch (error) {
       //   console.log(error);
     }
@@ -146,6 +177,13 @@ const JobFlyer = () => {
   //test
   const [authorIndex, setauthorIndex] = useState(false);
 
+  const [isIntern, setisIntern] = useState(false);
+  const [isAssistant, setisAssistant] = useState(false);
+  const [isHead, setisHead] = useState(false);
+  const [isAdvisor, setisAdvisor] = useState(false);
+  const [isLead, setisLead] = useState(false);
+  const [isResearcher, setisResearcher] = useState(false);
+
   return (
     <Layout>
       <div className="container mx-auto mt-10 mb-5 px-4">
@@ -166,7 +204,7 @@ const JobFlyer = () => {
               <h3 className="lg:text-xl sm:text-md flex-1 w-3/4">Select Your Designation</h3>{" "}
               {designation && (
                 <>
-                  <FeatherIcon className="flex-2 w-1/4 text-green-600" icon="check-circle" /> <span className="text-green-300">1/4</span>
+                  <FeatherIcon className="flex-2 w-1/4 text-green-600" icon="check-circle" />
                 </>
               )}
             </div>
@@ -178,37 +216,42 @@ const JobFlyer = () => {
                   </button>
                 ))}
               </div>
-              <div className="mt-7 mb-3 flex flex-row content-center align-middle">
-                <h3 className="lg:text-xl sm:text-md flex-1 w-3/4">Select Department</h3>{" "}
-                {department && (
+
+              <div className="fl">
+                {designation !== "Volunteer" && (
                   <>
-                    <FeatherIcon className="flex-2 w-1/4 text-green-600" icon="check-circle" /> <span className="text-green-400">2/4</span>
+                    <div>
+                      <div className="mt-7 mb-3 flex flex-row content-center align-middle">
+                        <h3 className="lg:text-xl sm:text-md flex-1 w-3/4">Select Department</h3>{" "}
+                        {department && (
+                          <>
+                            <FeatherIcon className="flex-2 w-1/4 text-green-600" icon="check-circle" />
+                          </>
+                        )}
+                      </div>
+                    </div>
+                    <div>
+                      {ResearchDepartments.map((button, index) => (
+                        <button onClick={() => addDepartment(button.name, button.color)} className={department === button.name ? "btn dbtn text-white btn-sm mb-2" : `mb-2 btn dbtn btn-sm btn-outline btn-ghost`} style={{ background: department === button.name && button.color }} key={index}>
+                          {button.name}
+                        </button>
+                      ))}
+                    </div>
                   </>
                 )}
-              </div>
-              <div className="flex gap-x-1 flex-wrap gap-y-2">
-                {ResearchDepartments.map((button, index) => (
-                  <button onClick={() => addDepartment(button.name, button.color)} className={department === button.name ? "btn dbtn text-white btn-sm" : `btn dbtn btn-sm btn-outline btn-ghost`} style={{ background: department === button.name && button.color }} key={index}>
-                    {button.name}
-                  </button>
-                ))}
               </div>
               <div className="mt-7 flex flex-row content-center align-middle">
                 <h3 className="lg:text-xl sm:text-md flex-1 w-3/4">Name</h3>
                 {Name && (
                   <>
-                    <FeatherIcon className="flex-2 w-1/4 text-green-600" icon="check-circle" /> <span className="text-green-500">3/4</span>
+                    <FeatherIcon className="flex-2 w-1/4 text-green-600" icon="check-circle" />
                   </>
                 )}
               </div>
-              <input onChange={ChangeName} type="text" placeholder="Full Name" className="mt-5 input input-bordered focus:input-primary" />
+              <input onChange={ChangeName} onBlur={addCount} type="text" value={Name} placeholder="Full Name" className="mt-5 input input-bordered focus:input-primary" />
               <div className="mt-7 flex flex-row content-center align-middle">
                 <h3 className="lg:text-xl sm:text-md flex-1 w-3/4">Feature Photo</h3>
-                {authorDp && (
-                  <>
-                    <FeatherIcon className="flex-2 w-1/4 text-green-600" icon="check-circle" /> <span className="text-green-600">Done!</span>
-                  </>
-                )}
+                {department && Name && designation && authorDp ? <span className="flex-2 w-1/4 text-green-600">Done!</span> : authorDp ? <FeatherIcon className="flex-2 w-1/4 text-green-600" icon="check-circle" /> : ""}
               </div>
               <div className="alert alert-warning text-justify mt-2 mb-3">
                 <div>
@@ -222,7 +265,21 @@ const JobFlyer = () => {
           </div>
           <div>
             <div ref={socialTemplate} className="shadow-md p-10 generated-image-wrap2" style={{ background: bgColor }}>
-              <div className="wave"></div>
+              {designation === "Research Intern" ? <div className="internel" style={{ backgroundImage: `url(${internBG})` }}></div> : null}
+              {designation === "Research Assistant" ? <div className="assistantel" style={{ backgroundImage: `url(${assistantBG})` }}></div> : null}
+              {designation === "Researcher" ? <div className="researcherel" style={{ backgroundImage: `url(${researcherBG})` }}></div> : null}
+              {designation === "Volunteer" ? <div className="volunteerel" style={{ backgroundImage: `url(${volunteerBG})` }}></div> : null}
+              {designation === "Lead Researcher" ? <div className="leadel" style={{ backgroundImage: `url(${leadBG})` }}></div> : null}
+              {designation === "Advisor" ? <div className="advisorel" style={{ backgroundImage: `url(${advisorBG})` }}></div> : null}
+              {designation === "Head of the Department" ? (
+                <>
+                  <div className="flare" style={{ backgroundImage: `url(${flare})` }}></div>
+                  <div className="headel" style={{ backgroundImage: `url(${headBG})` }}></div>
+                  <div className="headdp" style={{ backgroundImage: `url(${dpring})` }}></div>
+                </>
+              ) : null}
+              <div className="arrows" style={{ backgroundImage: `url(${arrows})` }}></div>
+              <div className="networks" style={{ backgroundImage: `url(${networks})` }}></div>
               <div className="generated-content">
                 <div className="amirlab-title2 job">
                   <img src={logoCircle} width={80} alt="" />
@@ -236,9 +293,9 @@ const JobFlyer = () => {
                 </div>
                 <div className="success-in mt-10">
                   <div className=" ">
-                    <div className="rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">{authorDp ? <img id="image-preview" width={220} height={220} className="rounded-full aspect-square object-cover" /> : <img width={190} className="rounded-full aspect-square object-cover" src={defaultAvatar} />}</div>
+                    <div className={designation === "Researcher" ? "rounded-full ring ring-success ring-offset-base-100 ring-offset-2" : designation === "Head of the Department" ? "rounded-full ring ring-purple-950 ring-offset-base-100 ring-offset-2" : designation === "Advisor" ? "rounded-full ring ring-cyan-600 ring-offset-base-100 ring-offset-2" : designation === "Research Assistant" ? "rounded-full ring ring-offset-base-100 ring-offset-2" : designation === "Lead Researcher" ? "rounded-full ring ring-yellow-600 ring-offset-base-100 ring-offset-2" : "rounded-full ring ring-primary ring-offset-base-100 ring-offset-2"}>{authorDp ? <img id="image-preview" width={220} height={220} className="rounded-full aspect-square object-cover" /> : <img width={190} className="rounded-full aspect-square object-cover" src={defaultAvatar} />}</div>
                   </div>
-                  <div className="nameAnddesg mt-6 border-l-2 border-l-primary">
+                  <div className={designation === "Lead Researcher" ? "nameAnddesg mt-6 border-l-2 border-purple-500" : designation === "Advisor" ? "nameAnddesg mt-6 border-l-2 border-teal-400" : designation === "Researcher" ? "nameAnddesg mt-6 border-l-2 border-emerald-500" : "nameAnddesg mt-6 border-l-2 border-l-primary"}>
                     <div className="journal-name mt-2 mb-0 ml-5">
                       {Name ? (
                         <span>
@@ -272,13 +329,32 @@ const JobFlyer = () => {
                       )}
                     </div>
                     <div className="department text-white mt-1 text-sm ml-5">
-                      {department ? (
+                      {department && designation !== "Volunteer" ? (
                         <span>
                           Department of <b>{department}</b>
                         </span>
+                      ) : designation === "Volunteer" ? (
+                        ""
                       ) : (
                         "Electrical Engineering"
                       )}
+                    </div>
+                  </div>
+                  <div className="text-white text-xs mt-20 drop-shadow-2xl flex flex-row gap-x-3 flex-wrap align-middle justify-center content-center">
+                    <div className="flex flex-row gap-x-1">
+                      <FeatherIcon icon="facebook" size={15} /> amirlabbd
+                    </div>
+                    <div className="flex flex-row gap-x-1">
+                      <FeatherIcon icon="linkedin" size={15} /> amirlabbd
+                    </div>
+                    <div className="flex flex-row gap-x-1">
+                      <FeatherIcon icon="twitter" size={15} /> amirlabbd
+                    </div>
+                    <div className="flex flex-row gap-x-1">
+                      <FeatherIcon icon="github" size={15} /> AMIR-Lab-Bangladesh
+                    </div>
+                    <div className="flex flex-row gap-x-1">
+                      <FeatherIcon icon="globe" size={15} /> amirl.org
                     </div>
                   </div>
                 </div>
