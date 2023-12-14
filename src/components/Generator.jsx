@@ -16,7 +16,7 @@ const Generator = () => {
   const [title, setTitle] = useState("");
   const [jName, setjName] = useState("");
   const [authorNames, setauthorNames] = useState([]);
-  const dummyauthorNames = ["Albert Einstein", "Marie Curie", "Isaac Newton", "Richard Feynman", "Stephen Hawking"];
+  const dummyauthorNames = ["Nikola Tesla", "Albert Einstein", "Marie Curie", "Isaac Newton", "Richard Feynman", "J. Robert Oppenheimer"];
   const [currentAuthorName, setcurrentAuthorName] = useState("");
   const [noAuthor, setnoAuthor] = useState(false);
 
