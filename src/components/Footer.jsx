@@ -21,16 +21,16 @@ const Footer = () => {
         <nav>
           <header className="footer-title">Get Social</header>
           <div className="amir-social-icons">
-            <a className="amir-social-link facebook" href="https://facebook.com/amirlabbd">
+            <a target="_blank" className="amir-social-link facebook" href="https://facebook.com/amirlabbd">
               <FeatherIcon icon="facebook" />
             </a>
-            <a className="amir-social-link twitter" href="https://x.com/amirlabbd">
+            <a target="_blank" className="amir-social-link twitter" href="https://x.com/amirlabbd">
               <FeatherIcon icon="twitter" />
             </a>
-            <a className="amir-social-link linkedin" href="https://www.linkedin.com/company/advanced-machine-intelligence-research-lab-amirl/">
+            <a target="_blank" className="amir-social-link linkedin" href="https://www.linkedin.com/company/advanced-machine-intelligence-research-lab-amirl/">
               <FeatherIcon icon="linkedin" />
             </a>
-            <a className="amir-social-link github" href="https://github.com/AMIR-Lab-Bangladesh">
+            <a target="_blank" className="amir-social-link github" href="https://github.com/AMIR-Lab-Bangladesh">
               <FeatherIcon icon="github" />
             </a>
           </div>
